@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from 'src/views/home/Home.vue'
+import home from 'src/views/home/Home.vue'
 import detail from 'src/views/detail.vue'
 import login from 'src/views/login/index'
+import dedicatedTools from 'src/views/tools/dedicatedTools'
+import generalTools from 'src/views/tools/generalTools'
 
 Vue.use(VueRouter)
 
@@ -15,7 +17,7 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: home
   },
   {
     path: '/about',
@@ -29,6 +31,23 @@ const routes = [
     path: '/detail',
     name: 'detail',
     component: detail
+  },
+  {
+    path:'/tools',
+    name:'tools',
+    component:home,
+    children:[
+      {
+        path:'dedicatedTools',
+        name:'dedicatedTools',
+        component:dedicatedTools
+      },
+      {
+        path:'generalTools',
+        name:'generalTools',
+        component:generalTools
+      }
+    ]
   }
 ]
 
@@ -37,6 +56,8 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+
 
 
 

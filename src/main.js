@@ -16,6 +16,7 @@ Vue.config.productionTip = false
 
 router.beforeEach((to,from,next)=>{
   
+  console.log(to.fullPath,'full');
   
   if (to.path != '/') {
 

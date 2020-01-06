@@ -30,7 +30,9 @@ export default {
   methods: {
     ...mapActions(['loginConfirm']),
     login(payload){
-      this.loginConfirm(payload).then(()=>{
+      this.loginConfirm(payload).then(res=>{
+        
+        console.log(res,'level');
         
         this.$router.push('/home')
 

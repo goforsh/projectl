@@ -15,7 +15,6 @@
 <script>
 import navBar from 'src/components/navBar/index'
 import navTop from 'src/components/navTop/index'
-import {mapState} from 'vuex'
 export default {
   name: 'home',
   components:{
@@ -24,10 +23,8 @@ export default {
 
   },
   computed:{
-    ...mapState(['isLogin'])
   },
   mounted(){
-    console.log(this.isLogin,'login');
     
   }
 }

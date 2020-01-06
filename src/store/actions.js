@@ -12,6 +12,11 @@ let userDB = [
 ]
 
 export default {
+    /**
+     * 
+     * @param {*} param0 
+     * @param {*} userInfo 
+     */
     loginConfirm({commit},userInfo) {
         let confirm = userDB.filter(item => {
             return item.userName == userInfo.userName
