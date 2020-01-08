@@ -30,14 +30,8 @@ export default {
   methods: {
     ...mapActions(['loginConfirm']),
     login(payload){
-      this.loginConfirm(payload).then(res=>{
-        
-        console.log(res,'level');
-        
+      this.loginConfirm(payload).then(res=>{       
         this.$router.push('/home')
-
-        
-
       }).catch(()=>{
         this.$message('用户名或密码错误')
       })

@@ -5,10 +5,11 @@ import detail from 'src/views/detail.vue'
 import login from 'src/views/login/index'
 import dedicatedTools from 'src/views/tools/dedicatedTools'
 import generalTools from 'src/views/tools/generalTools'
+import edit from 'src/views/edit/edit'
 
 Vue.use(VueRouter)
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'login',
@@ -17,6 +18,7 @@ const routes = [
   {
     path: '/home',
     name: 'home',
+    //redirect:'/tools/dedicatedTools',
     component: home
   },
   {
@@ -48,7 +50,7 @@ const routes = [
         component:generalTools
       }
     ]
-  }
+  }  
 ]
 
 const router = new VueRouter({
@@ -56,6 +58,20 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+export const asyncRoutes = [
+  {
+    path:'/edit',
+    component:home,
+    children:[
+      {
+        path:'/',
+        name:'edit',
+        component:edit
+      }
+    ]
+  }
+]
 
 
 

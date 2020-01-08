@@ -20,6 +20,8 @@
       </el-menu>
     </div>
     <div class="rightNav">
+            <span @click="test">lllllll</span>
+
       <span @click="logOut">log out</span>
     </div>
   </div>
@@ -40,7 +42,12 @@ export default {
   methods: {
     ...mapActions(['logoutConfirm']),
     logOut() {
-      this.logoutConfirm()
+      this.logoutConfirm().then(()=>{
+        this.$router.replace('/')
+      })
+    },
+    test(){
+      this.$router.push('/edit')
     }
     
   }

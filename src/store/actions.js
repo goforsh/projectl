@@ -10,6 +10,7 @@ let userDB = [
         'level' : 'usaul'
     }
 ]
+import {routes, asyncRoutes} from '../router/index'
 
 export default {
     /**
@@ -25,15 +26,34 @@ export default {
 
         return new Promise((resolve,reject)=>{
             if (confirm.length>0) {
-                commit('changeLogin','token')
-                resolve(confirm[0].level)
+                commit('changeLogin',confirm[0].level)
+                resolve()
             } else {
                 reject('wrong')
             }
         })
 
     },
+
+     getRoutes({commit}, level) {
+         let res = routes
+         
+         if (level === 'super') {
+             var accessRoutes = asyncRoutes.map(item=>{
+                 return item
+             })
+             res = res.concat(accessRoutes)
+         }
+         commit('generateRoutes',res)
+         return new Promise(reslove=>{
+             reslove(res)
+         })
+     },
+
     logoutConfirm({commit}) {
         commit('changeLogout')
+        return new Promise(resolve=>{
+            resolve()
+        })
     }
 }
