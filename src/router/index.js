@@ -62,6 +62,7 @@ const router = new VueRouter({
 export const asyncRoutes = [
   {
     path:'/edit',
+    name:'edit',
     component:home,
     children:[
       {

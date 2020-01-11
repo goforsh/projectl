@@ -1,3 +1,4 @@
 export default {
-    permission_routes:[]
+    generate_routes:[],
+    test:'123'
 }

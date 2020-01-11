@@ -1,7 +1,7 @@
 let userDB = [
     {
-        'userName' : 'admin',
-        'password' : 'admin',
+        'userName' : '',
+        'password' : '',
         'level' : 'super'
     },
     {
@@ -44,6 +44,8 @@ export default {
              })
              res = res.concat(accessRoutes)
          }
+         console.log(res,'resssss');
+         
          commit('generateRoutes',res)
          return new Promise(reslove=>{
              reslove(res)

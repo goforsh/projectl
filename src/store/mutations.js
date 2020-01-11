@@ -11,7 +11,12 @@ export default {
         state.peimission_routes = []
     },
     generateRoutes(state, routes){
-        state.peimission_routes = routes
+        console.log(routes,'commit');
+        
+        state.generate_routes = routes
+        state.test = routes
+        console.log(state.generate_routes,'aftercommit');
+        
         
 
     }

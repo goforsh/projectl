@@ -1,21 +1,16 @@
 <template>
-      <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span slot="title">导航一</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <span slot="title">选项4</span>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
+<div class="navItem">
+  <el-menu-item v-if="isOneRoute()" index="1-1">{{item.name}}</el-menu-item>
+
+  <el-submenu v-else index="1">
+    <template slot="title">
+      <i class="el-icon-location"></i>
+      <span slot="title">{{item.name}}</span>
+    </template>
+      <el-menu-item v-for="child in item.children" :key="child.name" index="1-1">{{child.name}}</el-menu-item>
+  </el-submenu>
+</div>
+      
 </template>
 
 <script>
@@ -24,11 +19,30 @@ export default {
   data(){
     return {}
   },
+  props:{
+    item:Object
+  },
   components: {},
   created(){},
-  mounted(){},
-  methods: {}
+  mounted(){
+    console.log(this.item,'item');
+    
+  },
+  methods: {
+    isOneRoute(){
+      if ('children' in this.item) {
+        if (this.item.children.length > 1) {
+          return false
+        }        
+      }
+
+      return true
+    }
+  }
 }
 </script>
 <style lang='scss' scoped>
+.navItem {
+  width: auto;
+}
 </style>

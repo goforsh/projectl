@@ -9,7 +9,7 @@
 <script>
 import welcome from 'src/components/login/welcome'
 import login from 'src/components/login/login'
-import {mapActions,mapState} from 'vuex'
+import {mapActions} from 'vuex'
 export default {
   name: 'mainLogin',
   data(){
@@ -24,13 +24,12 @@ export default {
 
   },
   computed:{
-    ...mapState(['isLogin'])
 
   },
   methods: {
     ...mapActions(['loginConfirm']),
     login(payload){
-      this.loginConfirm(payload).then(res=>{       
+      this.loginConfirm(payload).then(()=>{       
         this.$router.push('/home')
       }).catch(()=>{
         this.$message('用户名或密码错误')
