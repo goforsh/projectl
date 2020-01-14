@@ -1,12 +1,14 @@
 <template>
-  <div class=''>  
+  <div class='menu-wrapper'>  
     <div @click="isCollapse=!isCollapse">展开</div>
-    <el-menu 
+    
+
+    <el-menu
       default-active="activeMenu" 
       class="el-menu-vertical-demo" 
-      background-color="black"
+      background-color="#304156"
       text-color="white"
-      active-text-color="yellow"
+      active-text-color="black"
       collapse-transition="true"
       :collapse="isCollapse"
       mode="vertical">
@@ -66,4 +68,16 @@
 }
 </script>
 <style lang='scss' scoped>
+
+.el-menu-vertical-demo {
+  overflow-x: hidden;
+  height:100%;
+  &:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+ }
+}
+
+
+
 </style>

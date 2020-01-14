@@ -1,19 +1,21 @@
 <template>
 <div class="navItem">
-  <el-menu-item v-if="isOneRoute()" index="1-1">{{item.name}}</el-menu-item>
+  <el-menu-item v-if="isOneRoute()" index="1-1">
+    <navItem :title="item.meta.title" :icon='item.meta.icon'/>
+  </el-menu-item>
 
   <el-submenu v-else index="1">
     <template slot="title">
-      <i class="el-icon-location"></i>
-      <span slot="title">{{item.name}}</span>
+      <navItem :title="item.meta.title" :icon='item.meta.icon'/>
     </template>
-      <el-menu-item v-for="child in item.children" :key="child.name" index="1-1">{{child.name}}</el-menu-item>
+      <el-menu-item v-for="child in item.children" :key="child.meta.title" index="1-1">{{child.meta.title}}</el-menu-item>
   </el-submenu>
 </div>
       
 </template>
 
 <script>
+import navItem from './item'
 export default {
   name: '',
   data(){
@@ -22,7 +24,9 @@ export default {
   props:{
     item:Object
   },
-  components: {},
+  components: {
+    navItem
+  },
   created(){},
   mounted(){
     console.log(this.item,'item');
@@ -43,6 +47,12 @@ export default {
 </script>
 <style lang='scss' scoped>
 .navItem {
-  width: auto;
+  .el-submenu, .el-menu-item{
+    text-align: start;
+    width:100%;
+    span{
+      margin-left: 20px;
+    }    
+  } 
 }
 </style>

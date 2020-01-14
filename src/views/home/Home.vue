@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <navBar class="leftNav"></navBar>
-      <div class="rightMain">
-        <div class="topNav">
-          <navTop></navTop>
-        </div>
-        <div class="bottomMain">
-          <router-view/>
-        </div>
-      </div>      
+    <div class="rightMain">
+      <div class="topNav">
+        <navTop></navTop>
+      </div>
+      <div class="bottomMain">
+        <router-view/>
+      </div>
+    </div>      
   </div>
 </template>
 
@@ -32,15 +32,12 @@ export default {
 
 <style lang="scss" scoped>
 .home{
-  display: flex;
+  display:flex;
   .leftNav{
-    height: 100%;
-    flex: 0;    
+    flex:0;
   }
   .rightMain {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    flex:1;
   }
 }
 
