@@ -1,24 +1,22 @@
 <template>
   <div class='menu-wrapper'>  
     <div @click="isCollapse=!isCollapse">展开</div>
-    
-
     <el-menu
-      default-active="activeMenu" 
+      default-active="/home" 
       class="el-menu-vertical-demo" 
       background-color="#304156"
       text-color="white"
-      active-text-color="black"
+      active-text-color="#409EFF"
       collapse-transition="true"
       :collapse="isCollapse"
       mode="vertical">
-    <navItem v-for="item in generate_routes" :item = 'item' :key="item.path"/>      
+    <navBar v-for="item in generate_routes" :item='item' :basePath='item.path' :key="item.name"/>      
     </el-menu>
   </div>
 </template>
 
 <script>
-  import navItem from './navItem'
+  import navBar from './navBar'
   import {mapState} from 'vuex'
   export default {
   name: '',
@@ -42,10 +40,21 @@
     }
   },
   components: {
-    navItem
+    navBar
   },
   computed:{
-    ...mapState(['generate_routes'])
+    ...mapState(['generate_routes']),
+    activeMenu() {
+      const route = this.$route
+      const { meta, path } = route
+      // if set path, the sidebar will highlight the path you set
+      if (meta.activeMenu) {
+        return meta.activeMenu
+      }
+      console.log(path,'pppppppp');
+      
+      return path
+    }
   },
   created(){},
   mounted(){
