@@ -33,8 +33,10 @@ export default {
 <style lang="scss" scoped>
 .home{
   display:flex;
+  height: 100%;
   .leftNav{
     flex:0;
+    height: 100%;
   }
   .rightMain {
     flex:1;

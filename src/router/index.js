@@ -14,14 +14,12 @@ export const routes = [
     path: '/',
     name: 'login',
     component: login,
-    meta:{ title: '登录', icon: 'el-icon-user-solid' }
   },
   {
     path: '/home',
     name: 'home',
     //redirect:'/tools/dedicatedTools',
     component: home,
-    meta:{ title: '首页', icon: 'el-icon-star-on' }
   },
   {
     path: '/about',
@@ -30,13 +28,11 @@ export const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-    meta:{ title: '关于', icon: 'el-icon-warning' }
   },
   {
     path: '/detail',
     name: 'detail',
     component: detail,
-    meta:{ title: '详情', icon: 'el-icon-info' }
   },
   {
     path:'/tools',

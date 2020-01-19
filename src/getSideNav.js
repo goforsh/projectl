@@ -6,6 +6,8 @@ import store from 'src/store'
 router.beforeEach((to,from,next)=>{ 
   if (to.path != '/') {
     let auth = Cookie.get('logToken');
+    console.log(store.state.generate_routes);
+    
     if (store.state.generate_routes.length === 0) {
       if (auth == undefined) {
         next('/')

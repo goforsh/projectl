@@ -1,4 +1,4 @@
 export default {
     generate_routes:[],
-    test:'123'
+    isCollapse:'true'
 }

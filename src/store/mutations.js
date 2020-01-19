@@ -8,16 +8,18 @@ export default {
     },
     changeLogout(state) {        
         Cookie.remove('logToken')
-        state.peimission_routes = []
+        state.generate_routes = []
+        console.log(Cookie.get('logToken'));
+        console.log(state.generate_routes,'asdadsa');
+        
+    
+        
     },
     generateRoutes(state, routes){
-        console.log(routes,'commit');
-        
         state.generate_routes = routes
         state.test = routes
-        console.log(state.generate_routes,'aftercommit');
-        
-        
-
+    },
+    changeNavBar(state) {
+        state.isCollapse = !state.isCollapse
     }
 }

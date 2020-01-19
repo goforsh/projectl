@@ -2,22 +2,20 @@
 <div class="navItem">
   <template v-if="isOneRoute()">
     <router-link :to="resolvePath(item.path)" class="routeLink">
-      <el-menu-item index="1-1">
-        <menuItem :title="item.meta.title" :icon='item.meta.icon'/>
+      <el-menu-item :index="resolvePath(item.path)">
+        <menuItem :title="item.meta.title"  :icon='item.meta.icon'/>
       </el-menu-item>
     </router-link>
   </template>
-  
 
-  <el-submenu v-else index="1" popper-append-to-body>
+  <el-submenu v-else>
     <template slot="title">
-      <menuItem :title="item.meta.title" :icon='item.meta.icon'/>
+      <menuItem v-if="item.meta" :title="item.meta.title" :icon='item.meta.icon'/>
     </template>
-      <navBar v-for="child in item.children"
-              :key="child.name"
-              :item="child"
-              :basePath="item.path"/>
-      <!-- <el-menu-item v-for="child in item.children" :key="child.meta.title" index="1-1">{{child.meta.title}}</el-menu-item> -->
+    <navBar v-for="child in item.children"
+            :key="child.name"
+            :item="child"
+            :basePath="item.path"/>
   </el-submenu>
 </div>
       
@@ -66,12 +64,17 @@ export default {
   .el-submenu, .el-menu-item{
     text-align: start;
     width:100%;
+    /deep/
     span{
-      margin-left: 20px;
-    }    
+      margin-left: 15px;
+    }      
   } 
   .routeLink{
     text-decoration: none
   }
 }
+.el-submenu .el-menu-item{
+  background-color: #1f2d3d !important;
+}
+
 </style>

@@ -1,8 +1,6 @@
 <template>
   <div class='menu-wrapper'>  
-    <div @click="isCollapse=!isCollapse">展开</div>
     <el-menu
-      default-active="/home" 
       class="el-menu-vertical-demo" 
       background-color="#304156"
       text-color="white"
@@ -36,43 +34,20 @@
                 index: 3
             }
         ],
-        isCollapse:false,
     }
   },
   components: {
     navBar
   },
   computed:{
-    ...mapState(['generate_routes']),
-    activeMenu() {
-      const route = this.$route
-      const { meta, path } = route
-      // if set path, the sidebar will highlight the path you set
-      if (meta.activeMenu) {
-        return meta.activeMenu
-      }
-      console.log(path,'pppppppp');
-      
-      return path
-    }
+    ...mapState(['generate_routes','isCollapse']),
   },
   created(){},
   mounted(){
-//      this.getRoutes('super').then(res=>{
-//       console.log(res,'super');
-//       console.log(this.generate_routes,'permis');
-      
-// console.log(this.test,'333');
-
-//      })
-
-// setTimeout(()=>{
-//         console.log(this.generate_routes,'permis');
-
-// },5000)
+    console.log(this.generate_routes);
+    
   },
   methods: {
-    
   }
 }
 </script>

@@ -36,15 +36,14 @@ export default {
     },
 
      getRoutes({commit}, level) {
-         let res = routes
+         let res = routes.filter(item=>item.meta)
          
          if (level === 'super') {
-             var accessRoutes = asyncRoutes.map(item=>{
-                 return item
+             var accessRoutes = asyncRoutes.filter(item=>{
+                 return item.meta
              })
              res = res.concat(accessRoutes)
          }
-         console.log(res,'resssss');
          
          commit('generateRoutes',res)
          return new Promise(reslove=>{
@@ -57,5 +56,9 @@ export default {
         return new Promise(resolve=>{
             resolve()
         })
+    },
+
+    changeNavBar({commit}) {
+        commit('changeNavBar')
     }
 }
