@@ -21,7 +21,10 @@ export default {
   },
   created(){},
   mounted(){
-
+    const isDev = process.env.NODE_ENV === 'development'
+    if (isDev) {
+      console.log('zheshi dev');
+    }
   },
   computed:{
 
@@ -30,7 +33,7 @@ export default {
     ...mapActions(['loginConfirm']),
     login(payload){
       this.loginConfirm(payload).then(()=>{       
-        this.$router.push('/home')
+        this.$router.push('/main')
       }).catch(()=>{
         this.$message('用户名或密码错误')
       })

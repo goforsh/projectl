@@ -21,8 +21,6 @@
       </el-menu>
     </div>
     <div class="rightNav">
-            <span @click="test">lllllll</span>
-
       <span @click="logOut">log out</span>
     </div>
   </div>
@@ -47,15 +45,9 @@ export default {
         this.$router.replace('/')
       })
     },
-    test(){
-      this.$router.push('/edit')
-    },
     changeNav(){
       this.changeNavBar()
-      console.log(222);
-      
     }
-    
   }
 }
 </script>
@@ -74,9 +66,8 @@ export default {
   }
   .rightNav{
     flex:0 0 20%;
-    background-color: red;
     padding: 10px;
-
+    background-color: #409EFF;
   }
  
 }

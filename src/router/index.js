@@ -6,6 +6,7 @@ import login from 'src/views/login/index'
 import dedicatedTools from 'src/views/tools/dedicatedTools'
 import generalTools from 'src/views/tools/generalTools'
 import edit from 'src/views/edit/edit'
+import main from 'src/views/main'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,20 @@ export const routes = [
     component: detail,
   },
   {
+    path:'/main',
+    name:'main',
+    component:home,
+    meta:{ title: '主页', icon: 'el-icon-folder' },
+    children:[
+      {
+        path:'',
+        name:'main',
+        component:main,
+        meta:{ title: '主页', icon: 'el-icon-folder' },
+      }
+    ]
+  },
+  {
     path:'/tools',
     name:'tools',
     component:home,
@@ -53,7 +68,7 @@ export const routes = [
         meta:{ title: '通用工具', icon: 'el-icon-scissors' },
       }
     ]
-  }  
+  }
 ]
 
 const router = new VueRouter({

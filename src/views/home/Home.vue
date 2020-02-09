@@ -20,7 +20,6 @@ export default {
   components:{
     navBar,
     navTop
-
   },
   computed:{
   },

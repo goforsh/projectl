@@ -8,6 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './getSideNav'
 import 'src/style/reset.css'
 
+import 'src/icon'
 
 Vue.use(elementUI)
 
