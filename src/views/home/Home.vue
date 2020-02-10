@@ -39,6 +39,10 @@ export default {
   }
   .rightMain {
     flex:1;
+    .bottomMain {
+      height: 100%;
+      width:100%;
+    }
   }
 }
 
