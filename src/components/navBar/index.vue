@@ -5,7 +5,7 @@
       background-color="#304156"
       text-color="white"
       active-text-color="#409EFF"
-      collapse-transition="true"
+      collapse-transition
       :collapse="isCollapse"
       mode="vertical">
     <navBar v-for="item in generate_routes" :item='item' :basePath='item.path' :key="item.name"/>      

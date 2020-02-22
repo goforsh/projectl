@@ -1,5 +1,5 @@
 <template>
-    <el-row>
+    <el-row :gutter="32" class="panel">
         <el-col :xs="12" :sm="12" :lg="6"  v-for="(item,i) in svgName" :key="i">
             <div class="card">
                 <div :class="['icon-wrapper','icon-'+item.name]">
@@ -16,7 +16,6 @@
             </div>
         </el-col>
     </el-row>
-    
 </template>
 
 <script>
@@ -28,24 +27,24 @@ export default {
   },
   data () {
     return {
-      svgName: [
-        {
-            name:'peoples', 
-            value:180
-        },
-        {
-            name:'message', 
-            value:1180
-        },
-        {
-            name:'money', 
-            value:111180
-        },
-        {
-            name:'shopping', 
-            value:1111180
-        }
-     ]
+        svgName: [
+            {
+                name:'peoples', 
+                value:180
+            },
+            {
+                name:'message', 
+                value:1180
+            },
+            {
+                name:'money', 
+                value:111180
+            },
+            {
+                name:'shopping', 
+                value:1111180
+            }
+        ]
     }
   }
 }
@@ -57,7 +56,6 @@ export default {
         height: 80px;
         cursor: pointer;
         background-color: white;
-        margin: 18px;
         padding: 18px;
         border-radius: 2%;
         justify-content: space-around;
