@@ -8,7 +8,7 @@
     </router-link>
   </template>
 
-  <el-submenu v-else>
+  <el-submenu v-else :index="resolvePath(item.path)" popper-append-to-body>
     <template slot="title">
       <menuItem v-if="item.meta" :title="item.meta.title" :icon='item.meta.icon'/>
     </template>
@@ -36,7 +36,6 @@ export default {
   },
   created(){},
   mounted(){
-    console.log(this.item.path,'item');
     
   },
   methods: {

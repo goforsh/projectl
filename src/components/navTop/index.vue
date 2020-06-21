@@ -2,7 +2,7 @@
   <div class='main'>
     <div class="leftNav">
       <i class="el-icon-menu size" @click="changeNav"/>
-      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+      <el-menu  class="el-menu-demo" mode="horizontal" @select="handleSelect">
         <el-menu-item index="1">处理中心</el-menu-item>
         <el-submenu index="2">
           <template slot="title">我的工作台</template>
@@ -47,6 +47,9 @@ export default {
     },
     changeNav(){
       this.changeNavBar()
+    },
+    handleSelect(){
+      
     }
   }
 }

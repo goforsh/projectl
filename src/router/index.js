@@ -37,7 +37,6 @@ export const routes = [
   },
   {
     path:'/main',
-    name:'main',
     component:home,
     meta:{ title: '主页', icon: 'el-icon-folder' },
     children:[
@@ -80,7 +79,6 @@ const router = new VueRouter({
 export const asyncRoutes = [
   {
     path:'/edit',
-    name:'edit',
     component:home,
     meta:{ title: '编辑权限', icon: 'el-icon-edit' },
     children:[
