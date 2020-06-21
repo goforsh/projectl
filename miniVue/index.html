@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>{{person.name}}----{{person.age}}-----{{person.fav}}</div>
+      <ul>
+          <li>{{apple}}</li>
+          <li>{{apple}}</li>
+          <li>{{banana}}</li>
+          <li>{{kiwi}}</li>
+      </ul>
+  
+  
+      </div>
+    
+    <script src="./src/miniVue.js"></script>
+   
+    <script>
+        let app = new miniVue({
+            el:'#app',
+            data:{
+               person:{
+                   name:'123',
+                   age:'456',
+                   fav:'money'
+               },
+               apple:'pingguo',
+               banana:'xiangjiao',
+               kiwi:'qiyiguo',
+               arr:[1,2,3,4,5,6]
+           }
+        })
+        
+    
+    </script>
+    
+</body>
+</html>
